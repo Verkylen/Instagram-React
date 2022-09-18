@@ -1,10 +1,10 @@
 export default function Sugestoes() {
     const suggestionsProps = [
-        {suggestedProfileImg: 'Images/badvibesmemes 1.png', suggestedProfileName: 'bad.vibes.memes'},
-        {suggestedProfileImg: 'Images/chibirdart 1.png', suggestedProfileName: 'chibirdart'},
-        {suggestedProfileImg: 'Images/razoesparaacreditar 1.png', suggestedProfileName: 'razoesparaacreditar'},
-        {suggestedProfileImg: 'Images/adorableanimals 1.png', suggestedProfileName: 'adorable_animals'},
-        {suggestedProfileImg: 'Images/smallcutecats 1.png', suggestedProfileName: 'smallcutecats'},
+        {suggestedProfileImg: 'Images/badvibesmemes 1.png', suggestedProfileName: 'bad.vibes.memes', followingStatus: 'Segue você'},
+        {suggestedProfileImg: 'Images/chibirdart 1.png', suggestedProfileName: 'chibirdart', followingStatus: 'Segue você'},
+        {suggestedProfileImg: 'Images/razoesparaacreditar 1.png', suggestedProfileName: 'razoesparaacreditar', followingStatus: 'Novo no Instagram'},
+        {suggestedProfileImg: 'Images/adorableanimals 1.png', suggestedProfileName: 'adorable_animals', followingStatus: 'Segue você'},
+        {suggestedProfileImg: 'Images/smallcutecats 1.png', suggestedProfileName: 'smallcutecats', followingStatus: 'Segue você'}
     ];
 
     function suggestion(props) {
@@ -14,7 +14,7 @@ export default function Sugestoes() {
                     <img src={props.suggestedProfileImg}/>
                     <div class="Username_Relationship">
                         <p>{props.suggestedProfileName}</p>
-                        <p>Segue você</p>
+                        <p>{props.followingStatus}</p>
                     </div>
                 </div>
                 <p class="Follow">Seguir</p>

@@ -7,7 +7,7 @@ export default function Stories() {
         {storyAuthor: 'wawawiwac', authorImg: '/Images/wawawiwacomicsa 1.png'},
         {storyAuthor: 'respondeai', authorImg: '/Images/respondeai 1.png'},
         {storyAuthor: 'filomoderna', authorImg: '/Images/filomoderna 1.png'},
-        {storyAuthor: 'memeriago.', authorImg: '/Images/memeriagourmet 1.png'},
+        {storyAuthor: 'memeriago.', authorImg: '/Images/memeriagourmet 1.png'}
     ];
 
     function story(props) {

@@ -232,7 +232,7 @@ input {
     margin-right: 14px;
 }
 
-.Interactions ion-icon:nth-child(4) {
+.Interactions ion-icon:nth-of-type(4) {
     margin: 0 14px 0 auto;
 }
 
