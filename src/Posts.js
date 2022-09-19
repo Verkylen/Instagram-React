@@ -1,13 +1,18 @@
 import React from 'react';
 
 export default function Posts() {
-    const postProps = [
-        {authorImg: '/Images/meowed 1.png', author: 'meowed', postImg: 'Images/gato-telefone 1.png', lastToLikeImg: '/Images/respondeai 1.png', lastToLike: 'respondeai', numberOfLikes: 101523},
-        {authorImg: '/Images/barked 1.png', author: 'barked', postImg: 'Images/P_20191123_140701.jpg', lastToLikeImg: '/Images/adorableanimals 1.png', lastToLike: 'adorable_animals', numberOfLikes: 99159},
-        {authorImg: '/Images/meowed 1.png', author: 'meowed', postImg: 'Images/gato-telefone 1.png', lastToLikeImg: '/Images/respondeai 1.png', lastToLike: 'respondeai', numberOfLikes: 101523}
+    let [bookmarkFill, setBookmarkFill] = React.useState('bookmark-outline');
+
+    let postProps = [
+        {id: 1, authorImg: '/Images/meowed 1.png', author: 'meowed', postImg: 'Images/gato-telefone 1.png', bookmarkType: bookmarkFill, lastToLikeImg: '/Images/respondeai 1.png', lastToLike: 'respondeai', numberOfLikes: 101523},
+        {id: 2, authorImg: '/Images/barked 1.png', author: 'barked', postImg: 'Images/P_20191123_140701.jpg', bookmarkType: bookmarkFill, lastToLikeImg: '/Images/adorableanimals 1.png', lastToLike: 'adorable_animals', numberOfLikes: 99159},
+        {id: 3, authorImg: '/Images/meowed 1.png', author: 'meowed', postImg: 'Images/gato-telefone 1.png', bookmarkType: bookmarkFill, lastToLikeImg: '/Images/respondeai 1.png', lastToLike: 'respondeai', numberOfLikes: 101523}
     ];
 
     function addColor(element) {
+        if (element.nextElementSibling.firstElementChild.name === 'heart-outline') {
+            element.parentNode.lastElementChild.lastElementChild.lastElementChild.innerHTML = 'outras ' + (Number(element.parentNode.lastElementChild.lastElementChild.lastElementChild.innerHTML.split(' ')[1]) + 1).toString() + ' pessoas';
+        }
         element.nextElementSibling.firstElementChild.style.color = 'red';
         element.nextElementSibling.firstElementChild.name = 'heart';
     }
@@ -15,14 +20,17 @@ export default function Posts() {
     function toggleFill(element) {
         if (element.name === 'heart-outline') {
             element.style.color = 'red';
-        } else {
+            element.parentNode.nextElementSibling.lastElementChild.lastElementChild.innerHTML = 'outras ' + (Number(element.parentNode.nextElementSibling.lastElementChild.lastElementChild.innerHTML.split(' ')[1]) + 1).toString() + ' pessoas';
+        }
+        if (element.name === 'heart') {
             element.style.color = '';
+            element.parentNode.nextElementSibling.lastElementChild.lastElementChild.innerHTML = 'outras ' + (Number(element.parentNode.nextElementSibling.lastElementChild.lastElementChild.innerHTML.split(' ')[1]) - 1).toString() + ' pessoas';
         }
 
-        if (element.name === element.name.split('-')[0]) {
-            element.name += '-outline';
-        } else {
+        if (element.name.includes('-')) {
             element.name = element.name.split('-')[0];
+        } else {
+            element.name += '-outline';
         }
     }
 
@@ -41,7 +49,7 @@ export default function Posts() {
                     <ion-icon onClick={(e) => toggleFill(e.target)} name="heart-outline"></ion-icon>
                     <ion-icon name="chatbubble-outline"></ion-icon>
                     <ion-icon name="paper-plane-outline"></ion-icon>
-                    <ion-icon onClick={(e) => toggleFill(e.target)} name='bookmark-outline'></ion-icon>
+                    <ion-icon onClick={(e) => toggleFill(e.target)} name={props.bookmarkType} key={props.id}></ion-icon>
                 </div>
                 <div class="Likes">
                     <img src={props.lastToLikeImg}/>

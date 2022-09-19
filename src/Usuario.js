@@ -1,16 +1,26 @@
 import {useState} from 'react';
 
-export default function Usuario() {
+export default function Usuario(props) {
     let [username, setUsername] = useState('Usuário anônimo');
     let [userImg, setUserImg] = useState('Images/anonymous_user.png');
 
-    return (
-        <div class="User">
-            <img src={userImg} onClick={() => setUserImg(prompt('Link da imagem:'))} alt='Imagem inválida'/>
-            <div class="Username">
-                <p>@{username.split(' ').join('_')}</p>
-                <p>{username} <ion-icon onClick={() => setUsername(prompt('Nome de usuário:'))} name="pencil"></ion-icon></p>
+    function change(input, setFunction) {
+        if ( (input !== null) && (input !== '') ) {
+            setFunction(input);
+        }
+    }
+
+    function User(props) {
+        return(
+            <div class="User">
+                <img src={props.img} onClick={() => {const imgInput = prompt('URL da imagem:'); change(imgInput, setUserImg)}} alt='URL inválido'/>
+                <div class="Username">
+                    <p>@{props.name.split(' ').join('_')}</p>
+                    <p>{props.name} <ion-icon onClick={() => {const nameInput = prompt('Nome de usário:'); change(nameInput, setUsername)}} name="pencil"></ion-icon></p>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+    return <User img={userImg} name={username}/>;
 }
