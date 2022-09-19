@@ -7,7 +7,7 @@ export default function Sugestoes() {
         {suggestedProfileImg: 'Images/smallcutecats 1.png', suggestedProfileName: 'smallcutecats', followingStatus: 'Segue você'}
     ];
 
-    function suggestion(props) {
+    function Sugestao(props) {
         return (
             <div class="Relationship_suggested">
                 <div class="Image_Username">
@@ -30,7 +30,7 @@ export default function Sugestoes() {
             </div>
 
             <div class="Suggestions">
-                {suggestionsProps.map(item => suggestion(item))}
+                {suggestionsProps.map(item => Sugestao(item))}
             </div>
         </>
     );

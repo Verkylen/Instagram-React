@@ -1,22 +1,22 @@
 import {useState} from 'react';
 
 export default function Usuario(props) {
-    let [username, setUsername] = useState('Usuário anônimo');
     let [userImg, setUserImg] = useState('Images/anonymous_user.png');
+    let [username, setUsername] = useState('Usuário anônimo');
 
-    function change(input, setFunction) {
+    function change(input, setInput) {
         if ( (input !== null) && (input !== '') ) {
-            setFunction(input);
+            setInput(input);
         }
     }
 
     function User(props) {
         return(
             <div class="User">
-                <img src={props.img} onClick={() => {const imgInput = prompt('URL da imagem:'); change(imgInput, setUserImg)}} alt='URL inválido'/>
+                <img src={props.img} onClick={() => change(prompt('URL da imagem:'), setUserImg)} alt='URL inválido'/>
                 <div class="Username">
                     <p>@{props.name.split(' ').join('_')}</p>
-                    <p>{props.name} <ion-icon onClick={() => {const nameInput = prompt('Nome de usário:'); change(nameInput, setUsername)}} name="pencil"></ion-icon></p>
+                    <p>{props.name} <ion-icon onClick={() => change(prompt('Nome de usário:'), setUsername)} name="pencil"></ion-icon></p>
                 </div>
             </div>
         );
