@@ -9,27 +9,27 @@ export default function Sugestoes() {
 
     function Sugestao(props) {
         return (
-            <div class="Relationship_suggested">
-                <div class="Image_Username">
-                    <img src={props.suggestedProfileImg}/>
-                    <div class="Username_Relationship">
+            <div className="Relationship_suggested">
+                <div className="Image_Username">
+                    <img alt="" src={props.suggestedProfileImg}/>
+                    <div className="Username_Relationship">
                         <p>{props.suggestedProfileName}</p>
                         <p>{props.followingStatus}</p>
                     </div>
                 </div>
-                <p class="Follow">Seguir</p>
+                <p className="Follow">Seguir</p>
             </div>
         );
     }
 
     return (
         <>
-            <div class="Suggestion_text">
+            <div className="Suggestion_text">
                 <p>Sugestões para você</p>
                 <p>Ver tudo</p>
             </div>
 
-            <div class="Suggestions">
+            <div className="Suggestions">
                 {suggestionsProps.map(Sugestao)}
             </div>
         </>

@@ -13,17 +13,17 @@ export default function Stories() {
     function Story(props) {
         return (
             <div>
-                <img class="Stories_background" src="/Images/stories_background.png"/>
+                <img className="Stories_background" alt="" src="/Images/stories_background.png"/>
                 <p>{props.storyAuthor}</p>
-                <img class="Stories_Picture" src={props.authorImg}/>
+                <img className="Stories_Picture" alt="" src={props.authorImg}/>
             </div>
         );
     }
 
     return (
-        <div class="Stories_box">
+        <div className="Stories_box">
             <ion-icon name="chevron-forward-circle"></ion-icon>
-            <div class="Stories">
+            <div className="Stories">
                 {storyProps.map(Story)}
             </div>
         </div>

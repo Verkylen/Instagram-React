@@ -32,23 +32,23 @@ export default function Posts() {
         }
 
         return (
-            <div class="Post">
-                <div class="Author">
-                    <img src={props.authorImg}/>
+            <div className="Post">
+                <div className="Author">
+                    <img alt="" src={props.authorImg}/>
                     <p>{props.author}</p>
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
-                <div class="Horizontal_line">
+                <div className="Horizontal_line">
                 </div>
-                <img class="Post_image" onClick={() => toggleFill('heart-outline', setHeartFill)} src={props.postImg}/>
-                <div class="Interactions">
+                <img className="Post_image" onClick={() => toggleFill('heart-outline', setHeartFill)} alt="" src={props.postImg}/>
+                <div className="Interactions">
                     <ion-icon onClick={() => toggleFill(heartFill, setHeartFill)} style={{color: color}} name={heartFill}></ion-icon>
                     <ion-icon name="chatbubble-outline"></ion-icon>
                     <ion-icon name="paper-plane-outline"></ion-icon>
                     <ion-icon onClick={() => toggleFill(bookmarkFill, setBookmarkFill)} name={bookmarkFill}></ion-icon>
                 </div>
-                <div class="Likes">
-                    <img src={props.lastToLikeImg}/>
+                <div className="Likes">
+                    <img alt="" src={props.lastToLikeImg}/>
                     <p>Curtido por <strong>{props.lastToLike}</strong> e <strong>outras {numberOfLikesVariable} pessoas</strong></p>
                 </div>
             </div>
