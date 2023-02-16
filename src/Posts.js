@@ -57,7 +57,7 @@ export default function Posts() {
 
     return (
         <>
-            {postProps.map(item => Post(item))}
+            {postProps.map(Post)}
         </>
     );
 }

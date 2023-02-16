@@ -24,7 +24,7 @@ export default function Stories() {
         <div class="Stories_box">
             <ion-icon name="chevron-forward-circle"></ion-icon>
             <div class="Stories">
-                {storyProps.map(item => Story(item))}
+                {storyProps.map(Story)}
             </div>
         </div>
     );

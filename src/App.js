@@ -5,7 +5,6 @@ export default function App() {
     return (
         <div class="App">
             <NavBar/>
-
             <Corpo/>
 
             <div class="Bottom_bar">

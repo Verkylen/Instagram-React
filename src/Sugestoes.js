@@ -30,7 +30,7 @@ export default function Sugestoes() {
             </div>
 
             <div class="Suggestions">
-                {suggestionsProps.map(item => Sugestao(item))}
+                {suggestionsProps.map(Sugestao)}
             </div>
         </>
     );
